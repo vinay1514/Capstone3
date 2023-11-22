@@ -26,5 +26,6 @@ public class LoginController {
 		//service.findByUsernameAndPassword(Integer.parseInt(empl.getEmpid()), empl.getPassword());
 		return ResponseEntity.ok("success");
 	}
+	
 
 }
