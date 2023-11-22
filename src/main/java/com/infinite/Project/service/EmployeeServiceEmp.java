@@ -13,10 +13,10 @@ public class EmployeeServiceEmp implements IEmployeeService {
 	
 	private EmployeeRepoImp repo;
 	
-	@Transactional
-	@Override
-	public Employee findByUsernameAndPassword(int userid, String password) {
-		return repo.findByUsernameAndPassword(userid, password);
-	}
+//	@Transactional
+//	@Override
+//	public Employee findByUsernameAndPassword(int userid, String password) {
+//		return repo.findByUsernameAndPassword(userid, password);
+//	}
 
 }

@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Employee {
 	
 	@Id
-	@Column(name="empid")
+	@Column(name="emp_id")
 	private int empid;
 	
 	@Column(name="empname")

@@ -6,5 +6,11 @@ import com.infinite.Project.pojo.Employee;
 
 public interface IEmployeeRepo extends JpaRepository<Employee, Long> {
 	
-	public Employee findByUsernameAndPassword(int userid, String password);
+	public Employee findByUserid(int userid);
+	
+	public Employee findByEmail(String email);
+	
+	public Employee findByPassword(String password);
+	
+	//public Employee findByUsernameAndPassword(int userid, String password);
 }

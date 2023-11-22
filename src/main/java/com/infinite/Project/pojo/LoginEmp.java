@@ -2,15 +2,15 @@ package com.infinite.Project.pojo;
 
 public class LoginEmp {
 
-	private String empid;
+	private String email;
 	private String password;
 
-	public String getEmpid() {
-		return empid;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setEmpid(String empid) {
-		this.empid = empid;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getPassword() {

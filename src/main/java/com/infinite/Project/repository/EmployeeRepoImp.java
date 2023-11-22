@@ -19,14 +19,13 @@ public abstract class EmployeeRepoImp implements IEmployeeRepo {
 		this.sesfactory = sesfactory;
 	}
 	
-	@Override
-	public Employee findByUsernameAndPassword(int userid, String password) {
-		Session session = this.sesfactory.getCurrentSession();
-		//Query q = session.createQuery("from Employee ");
-		//Query q = session.createQuery("from Employee where empid="+userid+" and password="+password+"");
-		//List<Employee> ls = q.list();
-		//System.out.print(ls);
-		return null;
-	}
+	/*
+	 * @Override public Employee findByUsernameAndPassword(int userid, String
+	 * password) { //Session session = this.sesfactory.getCurrentSession(); //Query
+	 * q = session.createQuery("from Employee "); //Query q =
+	 * session.createQuery("from Employee where empid="+userid+" and password="
+	 * +password+""); //List<Employee> ls = q.list(); //System.out.print(ls); return
+	 * null; }
+	 */
 
 }
