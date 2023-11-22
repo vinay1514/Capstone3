@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.infinite.Project.pojo.Employee;
 import com.infinite.Project.pojo.LoginEmp;
+import com.infinite.Project.pojo.LoginMessage;
 import com.infinite.Project.repository.EmployeeRepoImp;
 import com.infinite.Project.repository.IEmployeeRepo;
 import com.infinite.Project.service.EmployeeServiceEmp;
@@ -15,10 +16,10 @@ import com.infinite.Project.service.EmployeeServiceEmp;
 @CrossOrigin(origins = "http://localhost:3000/") // Allowing requests from the React frontend
 @RequestMapping("/api")
 public class LoginController {
-	
-	private EmployeeServiceEmp service;
-	
-	private IEmployeeRepo repo;
+	// @Autowired
+	// private EmployeeServiceEmp service;
+    @Autowired
+	private EmployeeRepoImp repo;
 
 	/*
 	 * @PostMapping(value="/login") public ResponseEntity<String> login(@RequestBody
@@ -26,32 +27,26 @@ public class LoginController {
 	 * System.out.print(empl.getPassword()); return ResponseEntity.ok("success"); }
 	 */
 	@PostMapping(value = "/login")
-	public ResponseEntity<String> login(@RequestBody LoginEmp empl) {
-		String email=empl.getEmail();
-		String pass=empl.getPassword();
-		System.out.print(email);
-		System.out.print(pass);
-		
-//		Employee empobj=repo.findByUserid(id);
-//		String emopass=empobj.getPassword();
-//		
-//		if(empobj!=null)
-//		{
-//			if(emopass.matches(pass))
-//			{
-//				return ResponseEntity.ok("success");
-//			}
-//			else
-//			{
-//				return (ResponseEntity<String>) ResponseEntity.notFound();
-//			}
-//		}
-		
-		//System.out.print(empl.getPassword());
-		
-		//service.findByUsernameAndPassword(id,pass);
-		return ResponseEntity.ok("success");
+	public LoginMessage login(@RequestBody LoginEmp loginFront) {
+		System.out.println(loginFront.getEmail());
+		System.out.println(loginFront.getPassword());
+		try {
+			String e = repo.findByEmail(loginFront.getEmail());
+
+			String p = repo.findByPassword(loginFront.getPassword());
+			System.out.println(e + " " + p);
+		} catch (Exception e) {
+			System.out.print(e.getCause());
+		}
+		/*
+		 * String email = repo.findByEmail(loginFront.getEmail()); if (email != null) {
+		 * String password = loginFront.getPassword(); //String userpass =
+		 * email.getPassword(); if (password.matches(password)) { return new
+		 * LoginMessage("Login Success", true); } else { return new
+		 * LoginMessage("Incorrect emailId or Password", false); } } else { return new
+		 * LoginMessage("emailId not exist", false); }
+		 */
+		return new LoginMessage("Login Success", true);
 	}
-	
 
 }

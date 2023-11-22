@@ -9,10 +9,10 @@ import com.infinite.Project.pojo.Employee;
 import com.infinite.Project.repository.EmployeeRepoImp;
 
 @Service
-public class EmployeeServiceEmp implements IEmployeeService {
-	
+public abstract class EmployeeServiceEmp implements IEmployeeService {
+
 	private EmployeeRepoImp repo;
-	
+
 //	@Transactional
 //	@Override
 //	public Employee findByUsernameAndPassword(int userid, String password) {

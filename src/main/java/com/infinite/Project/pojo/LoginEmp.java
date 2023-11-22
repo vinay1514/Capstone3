@@ -5,6 +5,17 @@ public class LoginEmp {
 	private String email;
 	private String password;
 
+	public LoginEmp() {
+		
+		// TODO Auto-generated constructor stub
+	}
+
+	public LoginEmp(String email, String password) {
+		super();
+		this.email = email;
+		this.password = password;
+	}
+
 	public String getEmail() {
 		return email;
 	}

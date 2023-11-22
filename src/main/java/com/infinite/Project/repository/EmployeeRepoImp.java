@@ -12,13 +12,32 @@ import com.infinite.Project.pojo.Employee;
 
 @Repository
 public abstract class EmployeeRepoImp implements IEmployeeRepo {
-	
+
 	@Autowired
 	private SessionFactory sesfactory;
+
 	public void setSesfactory(SessionFactory sesfactory) {
 		this.sesfactory = sesfactory;
 	}
-	
+
+	@Override
+	public String findByEmail(String email) {
+		System.out.print("came");
+		Session session = this.sesfactory.getCurrentSession(); 
+		Query q = session.createQuery("from Employee ");
+		System.out.print(q.list());
+		return "true";
+
+	}
+
+	@Override
+	public String findByPassword(String password) {
+		Session session = this.sesfactory.getCurrentSession(); 
+		Query q = session.createQuery("from Employee ");
+		System.out.print(q.list());
+		return "true";
+	}
+
 	/*
 	 * @Override public Employee findByUsernameAndPassword(int userid, String
 	 * password) { //Session session = this.sesfactory.getCurrentSession(); //Query
