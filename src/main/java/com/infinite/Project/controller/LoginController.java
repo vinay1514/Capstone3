@@ -19,7 +19,7 @@ public class LoginController {
 	 * LoginEmp empl) { System.out.print(empl.getEmpid());
 	 * System.out.print(empl.getPassword()); return ResponseEntity.ok("success"); }
 	 */
-	@PostMapping(value = "/login")
+	@PostMapping(value = "/login") 
 	public ResponseEntity<String> login(@RequestBody LoginEmp empl) {
 		System.out.print(empl.getEmpid());
 		System.out.print(empl.getPassword());
